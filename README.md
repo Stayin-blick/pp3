@@ -30,3 +30,7 @@ The deployment terminal is set to 80 columns by 24 rows. That means that each li
 ---
 
 Happy coding!
+
+# Hangman
+
+The Hangman game serves as both an educational tool and a source of entertainment. It can help users enhance their vocabulary and spelling skills in a fun and engaging way. The game targets students, educators, and casual players. It is designed to be user-friendly and accessible, making it suitable for various educational settings and leisure activities.
