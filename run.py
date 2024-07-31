@@ -179,8 +179,18 @@ class Hangman:
         print(f"Guessed Letters: {', '.join(all_guesses)}")
 
     def display_remaining_guesses(self):
-        """Display the number of guesses remaining."""
-        print(f"Remaining Guesses: {self.remaining_guesses}")
+        if self.remaining_guesses <= len(self.hangman_states):
+            print(f"Remaining Guesses: {self.remaining_guesses}")
+        else:
+            extra_guesses = self.remaining_guesses - len(self.hangman_states)
+            print(f"Remaining Guesses: {self.remaining_guesses} (including {extra_guesses} extra guesses)")
+
+    def display_hangman(self):
+        if len(self.wrong_guesses) < len(self.hangman_states):
+            print(self.hangman_states[len(self.wrong_guesses)])
+        else:
+            print(self.hangman_states[-1])
+
 
     def get_guess(self):
         """Prompt the player to guess a letter and validate the input."""
