@@ -35,7 +35,7 @@ class Hangman:
             else:
                 print(f"{self.name}, you've already guessed '{guess}'")
         if self.check_win():
-            print(f"Congratulations, {self.name}! You've won!")
+            print(f"Congratulations, {self.name}! You've won! \nThe word was '{self.word}'")
         else:
             print(f"Sorry, {self.name}. You've lost. The word was '{self.word}'")
         self.restart_game()
