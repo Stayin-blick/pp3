@@ -176,6 +176,7 @@ class Hangman:
         if self.check_win():
             print(f"Congratulations, {self.name}! You've won! \nThe word was '{self.word}'")
         else:
+            self.display_hangman()
             print(f"Sorry, {self.name}. You've lost. The word was '{self.word}'")
         self.restart_game()
 
@@ -219,7 +220,6 @@ class Hangman:
         else:
             self.wrong_guesses.append(guess)
             self.remaining_guesses -= 1
-            #hangamn diagram to be added
 
     def check_win(self):
         """Check if the player has won the game by guessing all the letters."""
