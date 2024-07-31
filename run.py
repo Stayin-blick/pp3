@@ -13,6 +13,7 @@ class Hangman:
         self.difficulty = difficulty
         self.max_wrong_guesses = self.set_max_wrong_guesses()
         self.remaining_guesses = self.max_wrong_guesses
+        self.hangman_states = self.set_hangman_states()
 
     def set_max_wrong_guesses(self):
         """Set the maximum number of wrong guesses based on the difficulty level."""
@@ -23,12 +24,139 @@ class Hangman:
         else:
             return 11
 
+    def set_hangman_states(self):
+        """Set the hangman states based on 11 stages."""
+        return [
+            """
+                
+                
+                
+                
+                
+                
+                
+                
+            ---------
+            """,
+            """
+                
+                |   
+                |
+                |
+                |
+                |
+                |
+                |
+            ---------
+            """,
+            """
+                -----
+                |   
+                |
+                |
+                |
+                |
+                |
+                |
+            ---------
+            """,
+            """
+                -----
+                |   |
+                |   
+                |
+                |
+                |
+                |
+                |
+            ---------
+            """,
+            """
+                -----
+                |   |
+                |   |
+                |    
+                |
+                |
+                |
+                |
+            ---------
+            """,
+            """
+                -----
+                |   |
+                |   |
+                |   O
+                |
+                |
+                |
+                |
+            ---------
+            """,
+            """
+                -----
+                |   |
+                |   |
+                |   O
+                |   |
+                |
+                |
+                |
+            ---------
+            """,
+            """
+                -----
+                |   |
+                |   |
+                |   O
+                |  /|
+                |
+                |
+                |
+            ---------
+            """,
+            """
+                -----
+                |   |
+                |   |
+                |   O
+                |  /|\\
+                |   
+                |
+                |
+            ---------
+            """,
+            """
+                -----
+                |   |
+                |   |
+                |   O
+                |  /|\\
+                |  / 
+                |
+                |
+            ---------
+            """,
+            """
+                -----
+                |   |
+                |   |
+                |   O
+                |  /|\\
+                |  / \\
+                |  
+                |
+            ---------
+            """
+        ]
+
     def play(self):
         """Main game loop to handle the gameplay until the player wins or loses."""
         while not (self.check_win() or self.check_loss()):
             self.display_word()
             self.display_guessed_letters()
             self.display_remaining_guesses()
+            self.display_hangman()
             guess = self.get_guess()
             if not self.already_guessed(guess):
                 self.update_game_state(guess)
