@@ -59,6 +59,7 @@ class Hangman:
         else:
             self.wrong_guesses.append(guess)
             self.remaining_guesses -= 1
+            #hangamn diagram to be added
 
     def check_win(self):
         return all(letter in self.guessed_letters for letter in self.word)
@@ -75,7 +76,16 @@ class Hangman:
             main()
         else:
             print("Thank you for playing Hangman!")
-    
+
+def load_words(difficulty: str):
+    word_lists = {
+        'easy' : [ 'bruise', 'forty', 'develop', 'muscle', 'vehicle', 'vegetable'],
+        'medium' : ['accommodate', 'category', 'competition', 'mischievous', 'lightning', 'opportunity'],
+        'hard' : ['sentiment' , 'sentiment', 'rehabilitation', 'extraterrestrial', 'prosecution', 'charismatic']
+    }
+    return word_lists.get(difficulty, [])
+
+
 def choose_word(words):
     return random.choice(words)
 
