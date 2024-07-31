@@ -208,9 +208,9 @@ class Hangman:
 
     def get_guess(self):
         """Prompt the player to guess a letter and validate the input."""
-        guess = input(f"{self.name}, please guess a letter: ").lower()
+        guess = input(f"{self.name}, please guess a letter:\n").lower()
         while not guess.isalpha() or len(guess) != 1:
-            guess = input("Invalid input. Please guess a single letter: ").lower()
+            guess = input("Invalid input. Please guess a single letter:\n").lower()
         return guess
 
     def update_game_state(self, guess: str):
@@ -235,7 +235,7 @@ class Hangman:
 
     def restart_game(self):
         """Prompt the player to restart the game or end it."""
-        choice = input("Do you want to play again? (yes/no): ").lower()
+        choice = input("Do you want to play again? (yes/no):\n").lower()
         if choice == 'yes':
             main()
         else:
@@ -261,7 +261,7 @@ def main():
 
     # Get the player's name and validate it
     while True:
-        name = input("Please enter your name: ").lower()
+        name = input("Please enter your name:\n").lower()
         if name.isalpha() and len(name) < 11:
             break
         else:
@@ -269,7 +269,7 @@ def main():
 
     # Get the difficulty level and validate it
     while True:
-        difficulty = input("Choose a difficulty (easy, medium, hard): ").lower()
+        difficulty = input("Choose a difficulty (easy, medium, hard):\n").lower()
         if difficulty in ['easy', 'medium', 'hard']:
             break
         else:
