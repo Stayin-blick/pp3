@@ -67,7 +67,7 @@ welcome to the hangman game, this game serves as both an educational tool and a 
 
 
 ## Delpoyment
-There are no changes to requirements.txt as no additional dependencies are needed. A Heroku app named 'pp3-hangman' has been created. Configuration variables have been set, and Python and Node.js build packs have been added. The app is connected to GitHub, and manual deployment has been chosen.
+There are no changes to requirements.txt as no additional dependencies are needed. A Heroku app named 'pp3-hangman' has been created. Configuration variables have been set, and Python and Node.js build packs have been added. The app is connected to GitHub, and manual deployment has been chosen. Deployment link https://pp3-hangman-02afc0b598bd.herokuapp.com/.
 
 ## Error handling
 
