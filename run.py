@@ -47,7 +47,8 @@ class Hangman:
 
     def display_guessed_letters(self):
         """Display the list of letters that have been guessed so far."""
-        print(f"Guessed Letters: {', '.join(self.guessed_letters)}")
+        all_guesses = self.guessed_letters + self.wrong_guesses
+        print(f"Guessed Letters: {', '.join(all_guesses)}")
 
     def display_remaining_guesses(self):
         """Display the number of guesses remaining."""
